@@ -1,0 +1,33 @@
+<body>
+  <!-- component -->
+  {{#each rows}}
+
+
+  <div class="flex flex-col items-center justify-center min-h-screen ">
+
+    <div class="w-full max-w-3xl px-4 py-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+  
+      <div class="mt-2">
+        <a href="#"
+          class="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline">{{nom_societe}}</a>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">{{descpt_societe}}</p>
+      </div>
+
+      <div class="flex items-center justify-between mt-4">
+        <div class="flex items-center">
+          <img class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
+            src="/uploads/{{url}}">
+          <div>
+            <h1 class="text-xl font-bold text-gray-700 dark:text-gray-200 sm:mt-0">{{nom_societe}}</h1>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">{{email_soct}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/each}}
+
+
+  {{> footer}}
+</body>

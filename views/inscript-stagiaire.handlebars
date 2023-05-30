@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../public/images/">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/public/js/script.js"></script>
+</head>
+
+<!-- header -->
+
+{{> navbar }}
+
+
+<!-- body -->
+
+
+<div class="container mx-auto">
+    <div class="max-w-xl p-5 mx-auto my-10 bg-white rounded-md shadow-sm">
+        <div class="text-center">
+            <h1 class="my-3 text-3xl font-semibold text-gray-700">Contactez-nous</h1>
+            <p class="text-gray-400">Remplissez le formulaire ci-dessous pour permet de postuler sur un stage</p>
+        </div><br>
+        <div>
+            <form action="/stagiaire/inscript-stagiaire" enctype="multipart/form-data" method="post">
+                <div class="mb-6">
+                    <label for="telephone" class="text-sm text-gray-600">Telephone</label>
+                    <input type="tele" name="telephone" placeholder="saisir telephone" id="telephone" maxlength="8"
+                        minlength="8" required
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 " />
+                </div>
+                <div class="mb-6">
+                    <label for="niveau" class="block mb-2 text-sm text-gray-600">Choisissez votre niveau scolaire
+                        :</label>
+                    <select class="block mb-2 text-sm text-gray-600 data-te-select-init disabled" name="niveau"
+                        id="niveau" required>
+                        <option value="Bac +1.licence">Bac +1.licence</option>
+                        <option value="Bac +2.Licence">Bac +2.Licence</option>
+                        <option value="Bac +3.Licence">Bac +3.Licence</option>
+                        <option value="Bac +1.Ingénierie">Bac +1.Ingénierie</option>
+                        <option value="Bac +2.Ingénierie">Bac +2.Ingénierie</option>
+                        <option value="Bac +3.Ingénierie">Bac +3.Ingénierie</option>
+                        <option value="Bac +4.Ingénierie">Bac +4.Ingénierie</option>
+                        <option value="Bac +5.Ingénierie">Bac +5.Ingénierie</option>
+                        <option value="Bac +1.Mastère">Bac +1.Mastère</option>
+                        <option value="Bac +2.Mastère">Bac +2.Mastère</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label for="specialite" class="block mb-2 text-sm text-gray-600">Choisissez un domaine de stage
+                        :</label>
+                    <select class="block mb-2 text-sm text-gray-600 data-te-select-init disabled" name="specialite"
+                        id="specialite" required>
+                        <option value="Informatique et technologies de l'information">Informatique et technologies de
+                            l'information</option>
+                        <option value="Marketing et communication">Marketing et communication</option>
+                        <option value="Ressources humaines">Ressources humaines</option>
+                        <option value="Finance et comptabilité">Finance et comptabilité</option>
+                        <option value="Ventes et développement des affaires">Ventes et développement des affaires
+                        </option>
+                        <option value="Gestion de projet">Gestion de projet</option>
+                        <option value="Recherche et développement">Recherche et développement</option>
+                        <option value="génie_civil">Génie civil</option>
+                        <option value="mécatronique">Mécatronique</option>
+                        <option value="Electricité industrielle & automatisme">Electricité industrielle & automatisme
+                        </option>
+                        <option value="Electricité batiment">Electricité batiment</option>
+                        <option value="Electrotechnique">Electrotechnique</option>
+                        <option value="Electromecanique">Electromecanique</option>
+                        <option value="Business">Business</option>
+                        <option value="Design graphique et multimédia">Design graphique et multimédia</option>
+                        <option value="Développement web et multimédia">Développement web et multimédia</option>
+                        <option value="Développement système informatique">Développement système informatique</option>
+                        <option value="Télécommunication">Télécommunication</option>
+                        <option value="Système embarque<">Système embarque</option>
+                        <option value="Sciences environnementales et durabilité">Sciences environnementales et
+                            durabilité</option>
+                        <option value="Droit">Droit</option>
+                        <option value="Relations publiques">Relations publiques</option>
+                        <option value="Éducation et formation">Éducation et formation</option>
+                        <option value="Soins de santé et services sociaux">Soins de santé et services sociaux</option>
+                        <option value="Tourisme et hôtellerie">Tourisme et hôtellerie</option>
+                        <option value="Médias et journalisme">Médias et journalisme</option>
+                        <option value="Arts et culture">Arts et culture</option>
+                        <option value="Sciences sociales et politiques">Sciences sociales et politiques</option>
+                        <option value="Secteur public et gouvernemental">Secteur public et gouvernemental</option>
+                        <option value="Gestion immobilière et développement de propriétés">Gestion immobilière et
+                            développement de propriétés</option>
+                    </select>
+
+                </div>
+
+                <label for="etablissement" class="block mb-2 text-sm text-gray-600">Choisissez votre etablissement
+                    :</label>
+                <select class="block mb-2 text-sm text-gray-600 data-te-select-init disabled" name="etablissement"
+                    id="etablissement" required>
+
+                    <option value="Tunis">Tunis</option>
+                    <option value="Sfax">Sfax</option>
+                    <option value="Sousse">Sousse</option>
+                    <option value="Gabès">Gabès</option>
+                    <option value="Bizerte">Bizerte</option>
+                    <option value="Nabeul">Nabeul</option>
+                    <option value="Kairouan">Kairouan</option>
+                    <option value="Tozeur">Tozeur</option>
+                    <option value="Gafsa">Gafsa</option>
+                    <option value="Monastir">Monastir</option>
+                    <option value="Mahdia">Mahdia</option>
+                    <option value="La Marsa">La Marsa</option>
+                    <option value="Ben Arous">Ben Arous</option>
+                    <option value="Djerba">Djerba</option>
+                    <option value="Zarzis">Zarzis</option>
+                    <option value="Tataouine">Tataouine</option>
+                    <option value="Hammamet">Hammamet</option>
+                    <option value="Kasserine">Kasserine</option>
+                    <option value="Beja">Beja</option>
+                    <option value="Jendouba">Jendouba</option>
+                    <option value="Grombalia">Grombalia</option>
+                    <option value="Menzel Bourguiba">Menzel Bourguiba</option>
+                    <option value="Douz">Douz</option>
+                    <option value="El Kef">El Kef</option>
+                </select>
+        </div>
+        <div class="mb-6">
+            <label for="address" class="text-sm text-gray-600">Address</label>
+            <input type="text" name="address" placeholder="tozeur" id="address" required
+                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" />
+        </div>
+        <div class="mb-6">
+            <label for="description_stagiaire" class="block mb-2 text-sm text-gray-600">Description personnelle</label>
+
+            <textarea rows="7" name="description_stagiaire" id="description_stagiaire" minlength="12" required
+                placeholder="salut jjgjgg"
+                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100  focus:border-indigo-300"></textarea>
+        </div>
+        <input type="file" name="avatar">
+        <br><br>
+        <div class="mb-6">
+
+            <button type="submit" class="px-5 py-1 bg-blue-500 hover:bg-amber-300">Send</button>
+        </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</div>{{> footer }}
+
+</html>

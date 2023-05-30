@@ -1,0 +1,59 @@
+{{>header-admin}}
+<br><br>
+<br>
+
+<div class="flex items-center justify-center p-18">
+
+    <form class="w-full max-w-lg" action="/gerantadmin/modifie/{{rows.id}}"  method="post">
+
+        <div class="flex flex-wrap -mx-3 mb-4">
+            <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+                <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="nom">
+                    Nom
+                </label>
+                <input
+                    class="appearance-none block w-full bg-gray-200 border-black  dark:text-black border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    value="{{rows.nom}}" name="nom" id="nom" type="text" placeholder="Saisir le nom de stagiaire">
+
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+                <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="prenom">
+                    Prenom
+                </label>
+                <input
+                    class="appearance-none block w-full bg-gray-200 border dark:text-black border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    value="{{rows.prenom}} " name="prenom" id="prenom" type="text"
+                    placeholder="saisir le prenom de stagiaire">
+            </div>
+
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-4">
+            <div class="w-full md:w-1/2 px-3">
+                <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="email">
+                    Email
+                </label>
+                <input
+                    class="appearance-none block w-full bg-gray-200 border dark:text-black border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    value="{{rows.email}}" name="email" required id="email" type="email" placeholder="saisir email">
+            </div>
+        </div>
+
+
+        <div class="flex flex-wrap -mx-3 mb-4">
+        </div>
+
+        <div class="flex flex-wrap -mx-3 mb-4">
+            <!-- component -->
+            <!-- This is an example component -->
+
+            <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0"> <button type="submit"
+                    class="px-5 py-1 bg-blue-500 hover:bg-amber-300 items-center">Send</button>
+            </div>
+        </div>
+    </form>
+
+
+
+</div>
+
+{{>footer-admin}}

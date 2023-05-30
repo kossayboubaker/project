@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../public/images/">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/public/js/script.js"></script>
+</head>
+
+<!-- header -->
+
+{{> navbar }}
+
+
+<!-- body -->
+
+
+<div class="container mx-auto">
+    <div class="max-w-xl p-5 mx-auto my-10 bg-white rounded-md shadow-sm">
+        <div class="text-center">
+            <h1 class="my-3 text-3xl font-semibold text-gray-700">Contactez-nous</h1>
+            <p class="text-gray-400">Remplissez le formulaire ci-dessous pour permet de postuler sur un stage</p>
+        </div><br>
+        <div>
+            <form action="/stagiaire/edit-stagiaire/{{rows.id}}" method="post">
+                <div class="mb-6">
+                    <label for="nom" class="text-sm text-gray-600">Nom</label>
+                    <input type="text" name="nom" placeholder="nom" id="nom" minlength="8" value="{{rows.nom}}"
+                        maxlength="8" required
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" />
+                </div>
+                <div class="mb-6">
+                    <label for="prenom" class="text-sm text-gray-600">Prenom</label>
+                    <input type="text" name="prenom" placeholder="prenom" id="prenom" value="{{rows.prenom}}"
+                        minlength="3" maxlength="20" required
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" />
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="text-sm text-gray-600">Email</label>
+                    <input type="email" name="email" placeholder="email" id="email" value="{{rows.email}}" minlength="3"
+                        maxlength="20" required
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" />
+                </div>
+                <div class="mb-6">
+                    <label for="address" class="text-sm text-gray-600">Adresse</label>
+                    <input type="text" name="address" placeholder="address" id="address" value="{{rows.address}}"
+                        minlength=" 3" maxlength="20" required
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" />
+                </div>
+                <div class="mb-6">
+                    <label for="telephone" class="text-sm text-gray-600">Telephone</label>
+                    <input type="tel" name="telephone" placeholder="telephone" id="telephone" value="{{rows.telephone}}"
+                        minlength=" 3" maxlength="20" required
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" />
+                </div>
+
+                <div class="mb-6">
+                    <label for="niveau" class="block mb-2 text-sm text-gray-600">Choisissez votre niveau scolaire
+                        :</label>
+                    <select class="block mb-2 text-sm text-gray-600 data-te-select-init disabled" name="niveau"
+                        id="niveau" required>
+                        <option value="pre">Bac +1.licence</option>
+                        <option value="dex">Bac +2.Licence</option>
+                        <option value="pfe">Bac +3.Licence</option>
+                        <option value="pfei">Bac +1.Ingénierie</option>
+                        <option value="dexi">Bac +2.Ingénierie</option>
+                        <option value="troisi">Bac +3.Ingénierie</option>
+                        <option value="quat">Bac +4.Ingénierie</option>
+                        <option value="cinqi">Bac +5.Ingénierie</option>
+                        <option value="prem">Bac +1.Mastère</option>
+                        <option value="dexm">Bac +2.Mastère</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label for="specialite" class="block mb-2 text-sm text-gray-600">Choisissez un domaine de stage
+                        :</label>
+                    <select class="block mb-2 text-sm text-gray-600 data-te-select-init disabled" name="specialite"
+                        id="specialite" required>
+                        <option value="informatique ">Informatique et technologies de l'information</option>
+                        <option value="marketing">Marketing et communication</option>
+                        <option value="rh">Ressources humaines</option>
+                        <option value="finance">Finance et comptabilité</option>
+                        <option value="ventes">Ventes et développement des affaires</option>
+                        <option value="projet">Gestion de projet</option>
+                        <option value="rd">Recherche et développement</option>
+                        <option value="génie_civil">Génie civil</option>
+                        <option value="mécatronique">Mécatronique</option>
+                        <option value="elei">Electricité industrielle & automatisme</option>
+                        <option value="eleb">Electricité batiment</option>
+                        <option value="eletech">Electrotechnique</option>
+                        <option value="elemec">Electromecanique</option>
+                        <option value="business">Business</option>
+                        <option value="design">Design graphique et multimédia</option>
+                        <option value="dev">Développement web et multimédia</option>
+                        <option value="dsi">Développement système informatique</option>
+                        <option value="tel">Télécommunication</option>
+                        <option value="sys_emba">Système embarque</option>
+                        <option value="environnement">Sciences environnementales et durabilité</option>
+                        <option value="droit">Droit</option>
+                        <option value="relations">Relations publiques</option>
+                        <option value="education">Éducation et formation</option>
+                        <option value="sante">Soins de santé et services sociaux</option>
+                        <option value="tourisme">Tourisme et hôtellerie</option>
+                        <option value="medias">Médias et journalisme</option>
+                        <option value="arts">Arts et culture</option>
+                        <option value="sciences_sociales">Sciences sociales et politiques</option>
+                        <option value="secteur_public">Secteur public et gouvernemental</option>
+                        <option value="immobilier">Gestion immobilière et développement de propriétés</option>
+                    </select>
+
+                </div>
+
+                <label for="etablissement" class="block mb-2 text-sm text-gray-600">Choisissez votre etablissement
+                    :</label>
+                <select class="block mb-2 text-sm text-gray-600 data-te-select-init disabled" name="etablissement"
+                    id="etablissement" required>
+                    <option value="Tunis">Tunis</option>
+                    <option value="Sfax">Sfax</option>
+                    <option value="Sousse">Sousse</option>
+                    <option value="Gabès">Gabès</option>
+                    <option value="Bizerte">Bizerte</option>
+                    <option value="Nabeul">Nabeul</option>
+                    <option value="Kairouan">Kairouan</option>
+                    <option value="Tozeur">Tozeur</option>
+                    <option value="Gafsa">Gafsa</option>
+                    <option value="Monastir">Monastir</option>
+                    <option value="Mahdia">Mahdia</option>
+                    <option value="La Marsa">La Marsa</option>
+                    <option value="Ben Arous">Ben Arous</option>
+                    <option value="Djerba">Djerba</option>
+                    <option value="Zarzis">Zarzis</option>
+                    <option value="Tataouine">Tataouine</option>
+                    <option value="Hammamet">Hammamet</option>
+                    <option value="Kasserine">Kasserine</option>
+                    <option value="Beja">Beja</option>
+                    <option value="Jendouba">Jendouba</option>
+                    <option value="Grombalia">Grombalia</option>
+                    <option value="Menzel Bourguiba">Menzel Bourguiba</option>
+                    <option value="Douz">Douz</option>
+                    <option value="El Kef">El Kef</option>
+                </select>
+
+                <div class="mb-6">
+                    <label for="description_stagiaire" class="block mb-2 text-sm text-gray-600">Description
+                        personnelle</label>
+                    <textarea rows="7" name="description_stagiaire" id="description_stagiaire" minlength="12" required
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100  focus:border-indigo-300">
+{{rows.description_stagiaire}}                     
+            </textarea>
+                </div>
+                <br />
+                <br />
+                <div class="mb-6">
+                    <button type="submit" class="px-5 py-1 bg-blue-500 hover:bg-amber-300">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{{> footer }}
+
+</html>

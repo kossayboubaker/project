@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="../public/css/main.css">
+        <link rel="stylesheet" href="../public/images/">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    </head>
+    {{>navbar }}
+
+
+    {{#if alert}}
+        <div class="mb-3 hidden w-full items-center rounded-lg bg-warning-100 py-5 px-6 text-base text-warning-800 data-[te-alert-show]:inline-flex" role="alert" data-te-alert-init data-te-alert-show>
+            <strong class="mr-1">Holy guacamole!
+            </strong>
+            You should check in on
+              some of those fields below.
+            <button type="button" class="ml-auto box-content rounded-none border-none p-1 text-warning-900 opacity-50 hover:text-warning-900 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none" data-te-alert-dismiss aria-label="Close">
+                <span class="w-[1em] focus:opacity-100 disabled:pointer-events-none disabled:select-none disabled:opacity-25 [&.disabled]:pointer-events-none [&.disabled]:select-none [&.disabled]:opacity-25">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+                        <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd"/>
+                    </svg>
+                </span>
+            </button>
+        </div>
+
+    {{/if}}
+
+    <!-- component -->
+    <br>
+    <div class="mx-auto w-full max-w-[550px]">
+        <form
+            class="p-10 bg-white rounded-lg drop-shadow-lg space-y-4" method="POST" action="/offre/forms-entreprise">
+
+            <!-- Name -->
+            <div class="flex flex-col">
+                <label for="titre">Titre</label>
+                <input type="text" name="titre" id="titre" required class="peer border border-slate-400">
+
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir votre titre
+                </p>
+            </div>
+            <!-- specialite -->
+          <div class="mb-6">
+                    <label for="specialite" class="border-slate-400">Choisissez un domaine de stage
+                        :</label>
+                    <select class="block mb-2 text-sm text-gray-800 data-te-select-init disabled" name="specialite" id="specialite" required>
+                        <option value="">Choisir specialite</option>
+                       
+                        <option value="Informatique et technologies de l'information">Informatique et technologies del'information</option>
+                        <option value="Marketing et communication">Marketing et communication</option>
+                        <option value="Ressources humaines">Ressources humaines</option>
+                        <option value="Finance et comptabilité">Finance et comptabilité</option>
+                        <option value="Ventes et développement des affaires">Ventes et développement des affaires
+                        </option>
+                        <option value="Gestion de projet">Gestion de projet</option>
+                        <option value="Recherche et développement">Recherche et développement</option>
+                        <option value="génie_civil">Génie civil</option>
+                        <option value="mécatronique">Mécatronique</option>
+                        <option value="Electricité industrielle & automatisme">Electricité industrielle & automatisme
+                        </option>
+                        <option value="Electricité batiment">Electricité batiment</option>
+                        <option value="Electrotechnique">Electrotechnique</option>
+                        <option value="Electromecanique">Electromecanique</option>
+                        <option value="Business">Business</option>
+                        <option value="Design graphique et multimédia">Design graphique et multimédia</option>
+                        <option value="Développement web et multimédia">Développement web et multimédia</option>
+                        <option value="Développement système informatique">Développement système informatique</option>
+                        <option value="Télécommunication">Télécommunication</option>
+                        <option value="Système embarque<">Système embarque</option>
+                        <option value="Sciences environnementales et durabilité">Sciences environnementales et
+                            durabilité</option>
+                        <option value="Droit">Droit</option>
+                        <option value="Relations publiques">Relations publiques</option>
+                        <option value="Éducation et formation">Éducation et formation</option>
+                        <option value="Soins de santé et services sociaux">Soins de santé et services sociaux</option>
+                        <option value="Tourisme et hôtellerie">Tourisme et hôtellerie</option>
+                        <option value="Médias et journalisme">Médias et journalisme</option>
+                        <option value="Arts et culture">Arts et culture</option>
+                        <option value="Sciences sociales et politiques">Sciences sociales et politiques</option>
+                        <option value="Secteur public et gouvernemental">Secteur public et gouvernemental</option>
+                        <option value="Gestion immobilière et développement de propriétés">Gestion immobilière et
+                            développement de propriétés</option>
+                    </select>
+
+                </div>
+
+
+            <!-- Description -->
+            <div class="flex flex-col">
+                <label for="descpt">Description</label>
+                <textarea name="descpt" id="descpt" cols="30" rows="3" required class="peer border border-slate-400"></textarea>
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir votre Description d'offre
+                </p>
+            </div>
+            <!-- date_debut -->
+            <div class="flex flex-col">
+                <label for="date_debut">Date debut de stage</label>
+                <input type="date" name="date_debut" id="date_debut" required class="peer border border-slate-400">
+
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir le date_debut de votre offre
+                </p>
+            </div>
+            <!-- date_fin -->
+            <div class="flex flex-col">
+                <label for="date_fin">Date finale de stage</label>
+                <input type="date" name="date_fin" id="date_fin" required class="peer border border-slate-400">
+
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir le date_fin de votre offre
+                </p>
+            </div>
+            <!--date expiré-->
+            <div class="flex flex-col">
+                <label for="dateexp">Date expiré de postulation</label>
+                <input type="date" name="dateexp" id="dateexp:" required class="peer border border-slate-400">
+
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir le date_fin de votre offre
+                </p>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="nom_societe">Nom sociéte</label>
+                <input type="nom_societe" name="nom_societe" id="nom_societe" required class="peer border border-slate-400">
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir votre spécialite d'offre
+                </p>
+            </div>
+
+
+            <button type="submit" class="px-5 py-1 bg-blue-500 hover:bg-amber-300">Send</button>
+        </form>
+    </div>
+</div><br><br>
+{{> footer }}
+

@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../public/css/main.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+</head>
+{{> navbar}}
+
+
+<body class="bg-gradient-to-r from-indigo-500 via-indigo-400 to-green-300">
+
+
+
+  <!-- Container -->
+  <!-- component -->
+
+  <body>
+    <section class="gradient-form h-full ">
+      <div class="container h-full p-10">
+        <div class=" flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+          <div class="w-full">
+            <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
+              <div class="g-0 lg:flex lg:flex-wrap">
+                <!-- Left column container-->
+                <div class="px-4 md:px-0 lg:w-6/12">
+                  <div class="md:mx-6 md:p-12">
+                    <!--Logo-->
+                    <div class="text-center">
+                      <img src="/images/7b2ef8d698e5425aba4de9b447ebc11c (1).png" alt="" class=" mx-auto w-20"><br>
+                      <h4 class="mb-12 mt-1 pb-1 text-xl font-semibold">
+                        Bienvenue au <b> Interny</b>
+                      </h4>
+                      <hr><br>
+                    </div>
+
+                    <form>
+                      <p class="mb-4 text-center">Veuillez connecte a votre compte</p>
+
+                      <!--email input-->
+                      <div class="relative mb-4">
+                        <p>Email</p>
+                        <label for="email"
+                          class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-black transition-all  ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blue-600  motion-reduce:transition-none dark:text-black dark:peer-focus:text-black">
+                        </label>
+                        <input type="email" name="email"
+                          class=" block min-h-[auto] w-full rounded border-0 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100  motion-reduce:transition-none dark:placeholder:text-black "
+                          id="email" placeholder="Saisir votre email" />
+                      </div>
+                      <!--mot_pass input-->
+                      <div class="relative mb-4">
+                        <p>Mot de passe</p>
+                        <label for="mot_pass"
+                          class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-black transition-all duration-200 ease-out  motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"></label>
+                        <input type="password" name="mot_pass"
+                          class="peer block min-h-[auto] w-full rounded border-0 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 "
+                          id="mot_pass" placeholder="Saisir votre mot de passe" />
+                      </div>
+                      <div class="message font-semibold text-red-500 mt-2"></div>
+
+                      <!--Submit button-->
+                      <div class="mb-12 pb-1 pt-1 text-center">
+                        <button type="submit"
+                          class="hover:bg-green-700 mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                          style="  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593); ">
+                          Se connecter
+                        </button>
+
+                        <!--Forgot mot_pass link-->
+                        <a href="#!">Mot de paase oublier?</a>
+                      </div>
+
+                      <!--Register button-->
+                      <div class="flex items-center justify-between pb-6">
+                        <p class="mb-0 mr-2">vous n'avez pas un compte?</p>
+                        <button type="button"
+                          class="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-green-500 dark:hover:bg-opacity-5"
+                          data-te-ripple-init data-te-ripple-color="light">
+                          <a href="inscription">Inscription</a>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <!-- Right column container with background and description-->
+                <div class="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none  "
+                  style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)">
+                  <div class="px-4 py-6 text-white md:mx-6 md:p-12 ">
+                    <h4 class="mb-6 text-2xl font-semibold ">
+                      Page de connexion : Connectez-vous pour accéder à votre compte et profiter d'offres exclusives !
+                    </h4>
+                    <hr><br>
+                    <p class="text-l">
+                      <b> Bienvenue sur notre page de connexion ! </b> Si vous êtes déjà membre de notre site web, vous
+                      pouvez vous connecter en utilisant votre adresse email et votre mot de passe.
+                    </p>
+                    <br>
+                    <p class="text-l">
+                      Pour accéder à votre compte, veuillez entrer votre adresse email et votre mot de passe dans les
+                      champs prévus à cet effet, puis cliquez sur le bouton "Se connecter". Si vous avez oublié votre
+                      mot de passe, vous pouvez cliquer sur le lien "Mot de passe oublié" pour réinitialiser votre mot
+                      de passe.
+                    </p>
+                    <br>
+                    <p class="text-l">
+                      Nous attachons une grande importance à la sécurité de vos données personnelles et nous utilisons
+                      des mesures de sécurité avancées pour protéger votre compte. Si vous remarquez une activité
+                      suspecte ou si vous avez des questions concernant la sécurité de votre compte, veuillez nous
+                      contacter immédiatement.
+                    </p>
+                    <br>
+                    <p class="text-l">
+                      Nous vous remercions de votre confiance et de votre fidélité.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br><br>
+    {{> footer}}
+    <script type="text/javascript">
+
+      try {
+        const form = document.querySelector("form");
+        const message = document.querySelector(".message");
+
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const xhr = new XMLHttpRequest();
+          xhr.open("POST", "/login");
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.onload = () => {
+            console.log("xhr.status: ", xhr.status);
+            if (xhr.status === 200) {
+              response = JSON.parse(xhr.response);
+              //if admin redirect to admin page
+              console.log("xhr.type_util: ", response.type_util);
+              if (response.type_util === "admin") {
+                window.location.replace("/dashboard-admin");
+                return;
+              }
+              window.location.replace("/home");
+            } else if (xhr.status === 401) {
+              message.textContent = "Invalid credentials";
+            } else {
+              message.textContent = "An error occurred";
+            }
+          };
+          xhr.onerror = () => {
+            message.textContent = "An error occurred";
+          };
+
+          const email = form.querySelector('input[type="email"]').value;
+          const mot_pass = form.querySelector('input[type="password"]').value;
+          const data = { email, mot_pass };
+          xhr.send(JSON.stringify(data));
+        });
+      } catch (err) {
+        console.log(err);
+      }
+
+    </script>
+  </body>
+
+</html>

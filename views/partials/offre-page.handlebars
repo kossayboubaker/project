@@ -1,0 +1,80 @@
+<form method="post">
+  <div class="w-full flex justify-center">
+    <div class="flex items-center justify-center ">
+      <div class="flex border-2 border-gray-200 rounded">
+        <input type="search" class="px-4 py-2 w-80" name="search" placeholder="Search...">
+        <button class="px-4 text-white bg-gray-600 border-l " type="submit">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+<br>
+
+
+{{#each rows}}
+
+
+<!-- component -->
+<div class="max-w-2xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800" style="cursor: auto;">
+  <div class="flex items-center justify-between">
+
+    <span class="text-sm font-light text-gray-600 dark:text-gray-400">{{this.date_debut}}</span>
+    <a
+      class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">{{this.specialite}}</a>
+  </div>
+  <span class="text-sm font-light text-gray-600 dark:text-gray-400">{{this.date_fin}}</span>
+  <div class="mt-2">
+    <a href="https://stackdiary.com/"
+      class="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline">{{this.titre}}</a>
+   
+  </div>
+  <div class="flex items-center ml-auto">
+    <img src="/uploads/{{this.url}}" alt="Author Photo"
+      class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block">
+    <a class="font-bold text-gray-700 cursor-pointer dark:text-gray-200">{{this.nom_societe}}</a>
+  </div>
+  <div class="flex items-center justify-start md:justify-between mt-4">
+    <div>
+      <a href="/societe/{{this.gerantid}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">Read more ⟶</a>
+      &nbsp;
+
+      <form method="post" action="/offre/postule/">
+        <input type="hidden" name="id_offre" value="{{this.id}}">
+        <input type="hidden" name="id_user" value="{{this.id_user}}">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">
+          Postule
+        </button>
+      </form>
+    </div>
+  </div>
+
+</div>
+{{/each}}
+<br>
+<style>
+  .max-w-2xl {
+    margin-top: 5rem;
+  }
+</style>
+<br>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+  const getoffre = () => {
+    axios
+      .get("http://localhost:3000/offre")
+      .then((response) => {
+        const offre = response.data.data;
+        console.log(offre);
+
+      })
+      .catch((error) => console.error(error));
+  };
+  getoffre();
+
+</script>
+
+
+{{> footer}}

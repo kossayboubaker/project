@@ -1,0 +1,64 @@
+ <!-- Name -->
+        <div class="flex flex-col">
+            <label for="titre">Titre</label>
+            <input type="text" name="titre" id="titre" value="{{this.titre}}" required class="peer border border-slate-400">
+
+            <p class="invisible peer-invalid:visible text-red-700 font-light">
+                Saisir votre titre
+            </p>
+        </div>
+        <!-- specialite -->
+        <div class="flex flex-col">
+            <label for="specialite">Specialite</label>
+            <input type="specialite" name="specialite" id="specialite" required class="peer border border-slate-400">
+            <p class="invisible peer-invalid:visible text-red-700 font-light">
+                  Saisir votre spécialite d'offre
+            </p>
+        </div>
+
+        <!-- Description -->
+        <div class="flex flex-col">
+            <label for="descpt">Description</label>
+            <textarea name="descpt" id="descpt" cols="30" rows="3" required class="peer border border-slate-400"></textarea>
+            <p class="invisible peer-invalid:visible text-red-700 font-light">
+                 Saisir votre Description d'offre
+            </p>
+        </div>
+<!-- date_debut -->
+        <div class="flex flex-col">
+            <label for="date_debut">Date debut de stage</label>
+            <input type="date" name="date_debut" id="date_debut" required class="peer border border-slate-400">
+
+            <p class="invisible peer-invalid:visible text-red-700 font-light">
+                Saisir le date_debut de votre offre
+            </p>
+        </div>
+        <!-- date_fin -->
+        <div class="flex flex-col">
+            <label for="date_fin">Date finale de stage</label>
+            <input type="date" name="date_fin" id="date_fin" required class="peer border border-slate-400">
+
+            <p class="invisible peer-invalid:visible text-red-700 font-light">
+                Saisir le date_fin de votre offre
+            </p>
+        </div>
+        <!--date expiré-->
+        <div class="flex flex-col">
+            <label for="dateexp">Date expiré de postulation</label>
+            <input type="date" name="dateexp" id="dateexp:" required class="peer border border-slate-400">
+
+            <p class="invisible peer-invalid:visible text-red-700 font-light">
+                Saisir le date_fin de votre offre
+            </p>
+        </div>
+        
+  <div class="flex flex-col">
+            <label for="nom_societe">Nom sociéte</label>
+            <input type="nom_societe" name="nom_societe" id="nom_societe" required class="peer border border-slate-400">
+            <p class="invisible peer-invalid:visible text-red-700 font-light">
+                  Saisir votre spécialite d'offre
+            </p>
+        </div>
+
+
+        <button type="submit" class="px-5 py-1 bg-blue-500 hover:bg-amber-300">Send</button>

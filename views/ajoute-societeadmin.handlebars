@@ -1,0 +1,114 @@
+{{> header-admin}}
+<!-- component -->
+<br>
+<div class="flex items-center justify-center p-18">
+    <form class="w-full max-w-lg" action="/societeadmin/ajoute-societeadmin" enctype="multipart/form-data" method="post" >
+  
+   
+  
+  <div class="flex flex-wrap -mx-3 mb-4">
+    <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2"  for="nom_societe">
+        Nom societe
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 border-gray-600  dark:text-black border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="nom_societe" required name="nom" maxlength="30" id="nom"  minlength="3" id="nom_societe" type="text" placeholder="Saisir le nom de societe">
+      
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="telephone">
+       Telephone de societe
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 border dark:text-black border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="telephone" pattern="\d{8}" size="8" maxlength="8" minlength="8" required id="telephone" minlength="8" maxlength="8" type="tel" placeholder="saisir telephone">
+    </div>
+  </div>
+  
+   <div class="flex flex-wrap -mx-3 mb-4">
+    <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="num_fax">
+       Numero de Fax
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 border border-gray-600  dark:text-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="num_fax" id="num_fax" type="tel" pattern="\d{8}" size="8"  maxlength="8" minlength="8" required placeholder="Saisir numero-fax ">
+      
+    </div>
+       <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="email_soct">
+       Email societe
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 border dark:text-black border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="email_soct" id="email_soct" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="30" required type="email" placeholder="saisir email_societe">
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-4">
+   <!-- component -->
+<!-- This is an example component -->
+<div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="activite">
+       Activite
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 border border-gray-600  dark:text-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="activite" id="activite" minlength="20" required type="text" placeholder="Saisir activite ">
+      
+    </div>
+    <div class="w-full md:w-1/3 px-3 mb-4 md:mb-0">
+     <label class=class="appearance-none block w-full bg-gray-200 border border-gray-600  dark:text-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"for="ville">ville</label>
+      <select class="block mb-2 text-sm text-gray-600 data-te-select-init disabled" name="ville" id="ville" required>
+
+                        <option value="Tunis">Tunis</option>
+                        <option value="Sfax">Sfax</option>
+                        <option value="Sousse">Sousse</option>
+                        <option value="Gabès">Gabès</option>
+                        <option value="Bizerte">Bizerte</option>
+                        <option value="Nabeul">Nabeul</option>
+                        <option value="Kairouan">Kairouan</option>
+                        <option value="Tozeur">Tozeur</option>
+                        <option value="Gafsa">Gafsa</option>
+                        <option value="Monastir">Monastir</option>
+                        <option value="Mahdia">Mahdia</option>
+                        <option value="La Marsa">La Marsa</option>
+                        <option value="Ben Arous">Ben Arous</option>
+                        <option value="Djerba">Djerba</option>
+                        <option value="Zarzis">Zarzis</option>
+                        <option value="Tataouine">Tataouine</option>
+                        <option value="Hammamet">Hammamet</option>
+                        <option value="Kasserine">Kasserine</option>
+                        <option value="Beja">Beja</option>
+                        <option value="Jendouba">Jendouba</option>
+                        <option value="Grombalia">Grombalia</option>
+                        <option value="Menzel Bourguiba">Menzel Bourguiba</option>
+                        <option value="Douz">Douz</option>
+                        <option value="El Kef">El Kef</option>
+                    </select>
+    </div>
+      <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="address_soct">
+      Adresse
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 border border-gray-600  dark:text-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="address_soct" id="address_soct" required  type="text" placeholder="Saisir adresse ">
+      
+    
+    </div>
+<div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="code_postale">
+      Code postale
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 border border-gray-600  dark:text-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="code_postale" id="code_postale" type="code" required maxlength="4" minlength="4" size="4" placeholder="Saisir code postale ">
+      
+    </div>
+    <div class="w-full md:w-4/4 px-3 mb-4 md:mb-0">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="descpt_societe">
+      Description
+      </label>
+       <textarea rows="4" name="descpt_societe" id="descpt_societe" required minlength="25" placeholder="salut jjgjgg" class="appearance-none block w-full bg-gray-200 border border-gray-600  dark:text-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"></textarea>
+                </div>
+    
+
+<input type="file" name="url" required accept=".jpg, .jpeg, .png" class="appearance-none block w-full py-3 px-4 mb-3 leading-tight focus:outline-none " >
+  </div>
+
+  <button type="submit" class="px-5 py-1 bg-blue-500 hover:bg-amber-300 items-center">Send</button>
+
+  </div>
+
+
+</form>
+ 
+
+{{> footer-admin}}

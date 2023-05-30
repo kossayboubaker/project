@@ -1,0 +1,123 @@
+{{>header-admin}}
+
+<br>
+
+<div class="flex items-center justify-center p-8">
+    <form class="w-full max-w-lg" action="/stagiaireadmin/modifie-stagiaireadmin/{{rows.id}}" method="post">
+        <div class="flex flex-wrap -mx-3 mb-4">
+            <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+                <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="nom">
+                    Nom
+                </label>
+                <input
+                    class="appearance-none block w-full bg-gray-200 border border-black dark:text-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    value="{{rows.nom}}" name="nom" id="nom" type="text" placeholder="Saisir le nom du stagiaire">
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+                <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="prenom">
+                    Prénom
+                </label>
+                <input
+                    class="appearance-none block w-full bg-gray-200 border dark:text-black border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    value="{{rows.prenom}}" name="prenom" id="prenom" type="text"
+                    placeholder="Saisir le prénom du stagiaire">
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-4">
+            <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+                <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="telephone">
+                    Téléphone
+                </label>
+                <input
+                    class="appearance-none block w-full bg-gray-200 border border-gray-600 dark:text-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    value="{{rows.telephone}}" name="telephone" required minlength="8" maxlength="8" id="telephone"
+                    type="tel" placeholder="Saisir le téléphone">
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+                <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="email">
+                    Email
+                </label>
+                <input
+                    class="appearance-none block w-full bg-gray-200 border dark:text-black border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    value="{{rows.email}}" name="email" required id="email" type="email" placeholder="Saisir l'email">
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-4">
+            <label
+                class="appearance-none block w-full bg-gray-200 border border-gray-600 dark:text-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                for="niveau">Niveau</label>
+            <select class="block mb-2 text-sm text-gray-600 data-te-select-init disabled" name="niveau" id="niveau"
+                required>
+                <option value="pre">Bac +1 Licence</option>
+                <option value="dex">Bac +2 Licence</option>
+                <option value="tri">Bac +3 Master</option>
+                <option value="qua">Bac +4 Master</option>
+                <option value="qui">Bac +5 Master</option>
+                <!-- Remaining options... -->
+            </select>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-4">
+            <label
+                class="appearance-none block w-full bg-gray-200 border border-gray-600 dark:text-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                for="etablissement">Établissement</label>
+            <select class="block mb-2 text-sm text-gray-600 data-te-select-init disabled" name="etablissement"
+                id="etablissement" required>
+                <option value="Tunis">Tunis</option>
+                <option value="Sousse">Sousse</option>
+                <option value="Sfax">Sfax</option>
+                <option value="Monastir">Monastir</option>
+                <option value="Gabes">Gabes</option>
+                <option value="Gafsa">Gafsa</option>
+                <option value="Bizerte">Bizerte</option>
+                <option value="Kairouan">Kairouan</option>
+                <option value="Kasserine">Kasserine</option>
+                <option value="Nabeul">Nabeul</option>
+                <option value="Medenine">Medenine</option>
+                <option value="Jendouba">Jendouba</option>
+                <option value="Beja">Beja</option>
+                <option value="Tozeur">Tozeur</option>
+                <option value="Kebili">Kebili</option>
+                <option value="Siliana">Siliana</option>
+                <option value="Mahdia">Mahdia</option>
+                <option value="Tataouine">Tataouine</option>
+                <option value="Zaghouan">Zaghouan</option>
+                <option value="Ariana">Ariana</option>
+                <!-- Remaining options... -->
+            </select>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-4">
+            <label class="ablock uppercase tracking-wide text-xs font-bold mb-2" for="specialite">Spécialité</label><br>
+            <select class="block mb-2 text-sm text-gray-600 data-te-select-init disabled" name="specialite"
+                id="specialite" required>
+                <option value="informatique" >Informatique et
+                    technologies de l'information</option>
+                <!-- Remaining options... -->
+            </select>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-4">
+            <div class="w-full md:w-1/2 px-3">
+                <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="adress">Adresse</label>
+                <input
+                    class="appearance-none block w-full bg-gray-200 border dark:text-black border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    value="{{rows.address}}" name="address" id="adress" type="text" placeholder="Saisir l'adresse">
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-4">
+            <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-xs font-bold mb-2"
+                    for="description_stagiaire">Description stagiaire</label>
+                <textarea
+                    class="appearance-none block w-full bg-gray-200 border dark:text-black border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    name="description_stagiaire" id="description_stagiaire" type="text"
+                    placeholder="Saisir la description du stagiaire">{{rows.description_stagiaire}}</textarea>
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-4">
+            <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+                <button type="submit" class="px-5 py-1 bg-blue-500 hover:bg-amber-300 items-center">Send</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{{>footer-admin}}

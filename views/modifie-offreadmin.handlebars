@@ -1,0 +1,132 @@
+{{> header-admin}}
+<!-- component -->
+<br>
+<div class="flex items-center justify-center p-18">
+  <form class="w-full max-w-lg" action="/offre/edit-offreadmin/{{rows.id}}" method="post">
+  <div class="flex flex-wrap -mx-3 mb-4">
+    <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2"  for="nom_societe">
+        Nom societe
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 border-gray-600  dark:text-black border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" value="{{rows.nom_societe}}" name="nom_societe" id="nom_societe" type="text" placeholder="Saisir le nom de societe">
+      
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="titre">
+      Titre
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 dark:text-black border border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" value="{{rows.titre}}" name="titre" id="titre" type="text" placeholder="saisir titre">
+    </div>
+  </div>
+ 
+  <div class="flex flex-wrap -mx-3 mb-4">
+    
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="descpt">
+       Description
+      </label>
+      <textarea class="appearance-none block w-full bg-gray-200 border dark:text-black border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="descpt" id="descpt" type="text" placeholder="saisir description">
+{{rows.descpt}}
+      </textarea>
+    </div>
+  </div>
+  
+
+    <div class="mb-6">
+                    <label for="specialite" class="block uppercase tracking-wide text-xs font-bold mb-2">Choisissez un domaine de stage
+                        :</label>
+                    <select class="block mb-2 text-sm text-black data-te-select-init disabled" name="specialite"id="specialite" required>
+                       <option value="{{rows.specialite}}">{{rows.specialite}}</option>
+                        <option value="Informatique et technologies de l'information">Informatique et technologies de l'information</option>
+                        <option value="Marketing et communication">Marketing et communication</option>
+                        <option value="Ressources humaines">Ressources humaines</option>
+                        <option value="Finance et comptabilité">Finance et comptabilité</option>
+                        <option value="Ventes et développement des affaires">Ventes et développement des affaires
+                        </option>
+                        <option value="Gestion de projet">Gestion de projet</option>
+                        <option value="Recherche et développement">Recherche et développement</option>
+                        <option value="génie_civil">Génie civil</option>
+                        <option value="mécatronique">Mécatronique</option>
+                        <option value="Electricité industrielle & automatisme">Electricité industrielle & automatisme
+                        </option>
+                        <option value="Electricité batiment">Electricité batiment</option>
+                        <option value="Electrotechnique">Electrotechnique</option>
+                        <option value="Electromecanique">Electromecanique</option>
+                        <option value="Business">Business</option>
+                        <option value="Design graphique et multimédia">Design graphique et multimédia</option>
+                        <option value="Développement web et multimédia">Développement web et multimédia</option>
+                        <option value="Développement système informatique">Développement système informatique</option>
+                        <option value="Télécommunication">Télécommunication</option>
+                        <option value="Système embarque<">Système embarque</option>
+                        <option value="Sciences environnementales et durabilité">Sciences environnementales et
+                            durabilité</option>
+                        <option value="Droit">Droit</option>
+                        <option value="Relations publiques">Relations publiques</option>
+                        <option value="Éducation et formation">Éducation et formation</option>
+                        <option value="Soins de santé et services sociaux">Soins de santé et services sociaux</option>
+                        <option value="Tourisme et hôtellerie">Tourisme et hôtellerie</option>
+                        <option value="Médias et journalisme">Médias et journalisme</option>
+                        <option value="Arts et culture">Arts et culture</option>
+                        <option value="Sciences sociales et politiques">Sciences sociales et politiques</option>
+                        <option value="Secteur public et gouvernemental">Secteur public et gouvernemental</option>
+                        <option value="Gestion immobilière et développement de propriétés">Gestion immobilière et
+                            développement de propriétés</option>
+                    </select>
+
+                </div>
+
+
+
+
+   <div class="flex flex-wrap -mx-3 mb-4">
+    <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="date_debut">
+        Date debut
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 border border-gray-600  dark:text-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" value="{{rows.date_debut}}" name="date_debut" id="date_debut" type="date" placeholder="Saisir le date de debut ">
+      
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="date_fin">
+       Date de fin
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 border dark:text-black border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" value="{{rows.date_fin}}" name="date_fin" id="date_fin" type="date" placeholder="saisir date de fin">
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-4">
+    <div class="w-full px-3">
+      <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="dateexp">
+        Date expiré
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 border dark:text-black border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" value="{{rows.dateexp}}" name="dateexp" id="dateexp" type="date" placeholder="saisir date expiré de stage">
+  
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-4">
+   <!-- component -->
+<!-- This is an example component -->
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.3.x/dist/index.js"></script>
+
+
+
+   <br>
+ <button type="submit" class="px-5 py-1 bg-blue-500 hover:bg-amber-300 items-center">Send</button>
+  
+  </div>
+  </div>
+</form>
+<br>
+<script>
+  // Function to format the date in the desired format (e.g., YYYY-MM-DD)
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    let month = (date.getMonth() + 1).toString().padStart(2, '0'); // Add leading zero if needed
+    let day = date.getDate().toString().padStart(2, '0'); // Add leading zero if needed
+    return `${year}-${month}-${day}`;
+  }
+</script>
+{{> footer-admin}}

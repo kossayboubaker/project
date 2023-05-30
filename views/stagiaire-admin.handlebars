@@ -1,0 +1,116 @@
+{{>header-admin}}
+<br><br>
+<br><br>
+<form method="post">
+	<div class="w-full flex justify-center">
+		<div class="flex items-center justify-center ">
+			<div class="flex border-2 border-gray-200 rounded">
+				<input type="search" class="px-4 py-2 w-80 text-gray-900" name="search" placeholder="Search...">
+				<button class="px-4  border-l " type="submit">
+					Search
+				</button>
+			</div>
+		</div>
+	</div>
+</form><br>
+<!-- component -->
+<table class="min-w-full border-collapse block md:table ">
+	<thead class="block md:table-header-group">
+		<tr
+			class="border border-gray-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative ">
+			<th class="p-3 font-bold md:border md:border-gray-500 text-left block md:table-cell">#</th>
+
+			<th class="p-3 font-bold md:border md:border-gray-500 text-left block md:table-cell">Nom</th>
+			<th class="p-3 font-bold md:border md:border-gray-500 text-left block md:table-cell">Prenom</th>
+			<th class="p-3 font-bold md:border md:border-gray-500 text-left block md:table-cell">Niveau</th>
+			<th class="p-3 font-bold md:border md:border-gray-500 text-left block md:table-cell">Specialite</th>
+			<th class="p-3 font-bold md:border md:border-gray-500 text-left block md:table-cell">Etablissement</th>
+
+			<th class=" p-3 font-bold md:border md:border-gray-500 text-left block md:table-cell">Adresse</th>
+			<th class=" p-3 font-bold md:border md:border-gray-500 text-left block md:table-cell">Description</th>
+
+			<th class=" p-4 px-10 font-bold md:border md:border-gray-500 text-center block md:table-cell">Actions</th>
+		</tr>
+	</thead>
+	<tbody class="block md:table-row-group ">{{#each rows}}
+		<tr class=" border border-gray-500 md:border-none block md:table-row ">
+			<td class="p-3 md:border md:border-gray-500 text-left block md:table-cell font-bold"><span
+					class="inline-block  md:hidden font-bold">#</span>{{this.id}}</td>
+
+			<td class="p-2 md:border md:border-gray-500 text-left block md:table-cell font-bold"><span
+					class="inline-block  md:hidden font-bold">Nom:&nbsp; </span>{{this.nom}}</td>
+			<td class="p-2 md:border md:border-gray-500 text-left block md:table-cell font-bold"><span
+					class="inline-block  md:hidden font-bold">Prenom:&nbsp; </span>{{this.prenom}}</td>
+			<td class="p-2 md:border md:border-gray-500 text-left block md:table-cell font-bold"><span
+					class="inline-block  md:hidden font-bold">Niveau: &nbsp;</span>{{this.niveau}}</td>
+			<td class="p-3 md:border md:border-gray-500 text-left block md:table-cell font-bold"><span
+					class="inline-block  md:hidden font-bold">Specialite:&nbsp; </span>{{this.specialite}}</td>
+			<td class="p-3 md:border md:border-gray-500 text-left block md:table-cell font-bold"><span
+					class="inline-block  md:hidden font-bold">Etablissement:&nbsp;</span>{{this.etablissement}}</td>
+
+			<td class="p-2 md:border md:border-gray-500 text-left block md:table-cell font-bold"><span
+					class="inline-block  md:hidden font-bold">Adresse:&nbsp;</span>{{this.address}}</td>
+			<td class="p-2 md:border md:border-gray-500 text-left block md:table-cell font-bold"><span
+					class="inline-block  md:hidden font-bold">Description:&nbsp;</span>{{this.description_stagiaire}}
+			</td>
+			<td class="p-1 md:border md:border-gray-500  text-left block md:table-cell font-bold">
+				<span class="inline-block w-1/4 md:hidden font-bold">Actions</span>
+				<a href="/stagiaireadmin/modifie-stagiaireadmin/{{this.id}}" type="button"
+					class="bg-gray-200 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded justify-center"><svg
+						class="h-6 w-5 text-green-500" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+						fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" />
+						<path d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+						<path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+						<line x1="16" y1="5" x2="19" y2="8" />
+					</svg></a>
+				<a href="/stagiaireadmin/delete-stagiaireadmin/{{this.id}}" type="button"
+					class="bg-gray-200  hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded justify-center"><svg
+						class="h-6 w-6 text-red-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+						stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" />
+						<line x1="4" y1="7" x2="20" y2="7" />
+						<line x1="10" y1="11" x2="10" y2="17" />
+						<line x1="14" y1="11" x2="14" y2="17" />
+						<path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+						<path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+					</svg>
+
+			</td>{{/each}}
+		</tr>
+
+
+	</tbody>
+</table>
+<br>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+	const getstagiaire = () => {
+		axios
+			.get("http://localhost:3000/stagiaireadmin")
+			.then((response) => {
+				const stagiaire = response.data.data;
+				console.log(response);
+			})
+			.catch((error) => console.error(error));
+	};
+	getstagiaire();
+
+	// Send a POST request
+
+	const deletestagiaire = (id) => {
+		axios
+			.delete(`http://localhost:3000/stagiairedmin/${id}`)
+			.then((response) => {
+				const stagiaire = response.data.data;
+				console.log(response);
+				getstagiaire();
+			})
+			.catch((error) => console.error(error));
+	};
+</script>
+
+<br><br>
+{{>footer-admin}}

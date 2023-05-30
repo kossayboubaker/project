@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="../public/css/main.css">
+        <link rel="stylesheet" href="../public/images/">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    </head>
+    {{> navbar }}
+
+
+    {{#if alert}}
+        <div class="mb-3 hidden w-full items-center rounded-lg bg-warning-100 py-5 px-6 text-base text-warning-800 data-[te-alert-show]:inline-flex" role="alert" data-te-alert-init data-te-alert-show>
+            <strong class="mr-1">Holy guacamole!
+            </strong>
+            You should check in on
+              some of those fields below.
+            <button type="button" class="ml-auto box-content rounded-none border-none p-1 text-warning-900 opacity-50 hover:text-warning-900 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none" data-te-alert-dismiss aria-label="Close">
+                <span class="w-[1em] focus:opacity-100 disabled:pointer-events-none disabled:select-none disabled:opacity-25 [&.disabled]:pointer-events-none [&.disabled]:select-none [&.disabled]:opacity-25">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+                        <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd"/>
+                    </svg>
+                </span>
+            </button>
+        </div>
+
+    {{/if}}
+
+    <!-- component -->
+    <br>
+    <div class="mx-auto w-full max-w-[550px]">
+        <form
+            class="p-10 bg-white rounded-lg drop-shadow-lg space-y-4" method="POST" action="/societe/forms-gerant">
+
+            <!-- Name -->
+            <div class="flex flex-col">
+                <label for="nom_societe">Nom societe</label>
+                <input type="text" name="nom_societe" id="nom_societe"  maxlength="30" required class="peer border border-slate-400">
+
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir votre nom de societe
+                </p>
+            </div>
+            <!-- email_soct -->
+            <div class="flex flex-col">
+                <label for="email_soct">Email</label>
+                <input type="text" name="email_soct" id="email_soct" minlength="4" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="30" required class="peer border border-slate-400">
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir votre email de societe
+                </p>
+            </div>
+<!-- telephone -->
+            <div class="flex flex-col">
+                <label for="telephone">Telephone</label>
+                <input name="telephone" id="telephone" pattern="\d{8}" size="8" maxlength="8" minlength="8" required id="telephone" minlength="8" maxlength="8" type="tel"  required class="peer border border-slate-400">
+
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir le telephone de societe
+                </p>
+            </div>
+
+            <!-- num_fax -->
+            <div class="flex flex-col">
+                <label for="num_fax">Numero fax</label>
+                <input type="tel" name="num_fax" id="num_fax" pattern="\d{8}" maxlength="8" minlength="8" size="8" required class="peer border border-slate-400">
+
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir le telephone fax de societe
+                </p>
+            </div>
+              
+            
+            <!--Adresse-->
+            <div class="flex flex-col">
+                <label for="address_soct">Adresse societe</label>
+                <input type="address_soct" name="address_soct" id="address_soct" minlength="4" required class="peer border border-slate-400">
+
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir adresse de societe 
+                </p>
+            </div>
+ <!-- Description -->
+<div class="flex flex-col">
+                <label for="ville" >Ville</label>
+                    <select class="peer border border-slate-400" name="ville" id="ville" required >
+                         <option value="">selectionné une ville</option>
+                        <option value="Tunis">Tunis</option>
+                        <option value="Sfax">Sfax</option>
+                        <option value="Sousse">Sousse</option>
+                        <option value="Gabès">Gabès</option>
+                        <option value="Bizerte">Bizerte</option>
+                        <option value="Nabeul">Nabeul</option>
+                        <option value="Kairouan">Kairouan</option>
+                        <option value="Tozeur">Tozeur</option>
+                        <option value="Gafsa">Gafsa</option>
+                        <option value="Monastir">Monastir</option>
+                        <option value="Mahdia">Mahdia</option>
+                        <option value="La Marsa">La Marsa</option>
+                        <option value="Ben Arous">Ben Arous</option>
+                        <option value="Djerba">Djerba</option>
+                        <option value="Zarzis">Zarzis</option>
+                        <option value="Tataouine">Tataouine</option>
+                        <option value="Hammamet">Hammamet</option>
+                        <option value="Kasserine">Kasserine</option>
+                        <option value="Beja">Beja</option>
+                        <option value="Jendouba">Jendouba</option>
+                        <option value="Grombalia">Grombalia</option>
+                        <option value="Menzel Bourguiba">Menzel Bourguiba</option>
+                        <option value="Douz">Douz</option>
+                        <option value="El Kef">El Kef</option>
+                    </select>
+                     <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir votre spécialite d'offre
+                </p>
+            </div>
+            <!--codepostal-->
+             <div class="flex flex-col">
+                <label for="code_postale">Code postale</label>
+                <input name="code_postale" id="code_postale" maxlength="4" type="code"  required class="peer border border-slate-400">
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir code_postale 
+                </p>
+            </div>
+          
+            <!-- Description -->
+            <div class="flex flex-col">
+                <label for="activite">Activite</label>
+                <textarea name="activite" id="activite" cols="30" rows="3" required class="peer border border-slate-400"></textarea>
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir l'activite 
+                </p>
+            </div>
+          
+            <!-- Description -->
+            <div class="flex flex-col">
+                <label for="descpt">Description</label>
+                <textarea name="descpt_societe" id="descpt_societe" cols="30" rows="4" required class="peer border border-slate-400"></textarea>
+                <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    Saisir votre Description de societe
+                </p>
+            </div>
+          
+            <div class="flex flex-col">
+                <label for="url">URL</label>
+               <input type="file" name="url" required accept=".jpg, .jpeg, .png" class="appearance-none block w-full py-3 px-4 mb-3 leading-tight focus:outline-none " >
+ <p class="invisible peer-invalid:visible text-red-700 font-light">
+                    selectionné une image 
+                </p>
+            </div>
+
+
+            <button type="submit" class="px-5 py-1 bg-blue-500 hover:bg-amber-300">Envoyer</button>
+        </form>
+    </div>
+</div><br><br>
+{{> footer }}
+
